@@ -1,7 +1,6 @@
 name: Say Hello
-
-on:
-  workflow_dispatch:
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on: [push]
 
 jobs:
   run-my-action:

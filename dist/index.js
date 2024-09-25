@@ -1,4 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-console.log('Hello World!');
+const core_1 = require("@actions/core");
+const name = (0, core_1.getInput)('name');
 //# sourceMappingURL=index.js.map

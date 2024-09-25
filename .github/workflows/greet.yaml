@@ -1,13 +1,13 @@
 name: Say Hello
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+run-name: ${{ github.actor }} is saying hello 👋
 on: [push]
 
 jobs:
   run-my-action:
-    name: Checks if this action works
+    name: Say Hello
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: ./
         with:
           name: 'Lukas'

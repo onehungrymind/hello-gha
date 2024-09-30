@@ -15,7 +15,7 @@ async function getPerson() {
   const _url = `${url}people/1/`;
 
   try {
-    const response = await fetch(url);
+    const response = await fetch(_url);
     if (!response.ok) {
       throw new Error(`Response status: ${response.status}`);
     }

@@ -26832,7 +26832,6 @@ async function exampleFetch() {
     console.log(json);
 }
 exampleFetch();
-console.log('Hello Async!', exampleFetch);
 console.log(`Hello, ${name}!`);
 //# sourceMappingURL=index.js.map
 })();

@@ -12,6 +12,4 @@ async function exampleFetch() {
 
 exampleFetch();
 
-console.log('Hello Async!', exampleFetch);
-
 console.log(`Hello, ${name}!`);

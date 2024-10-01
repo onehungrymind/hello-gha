@@ -55,9 +55,7 @@ jobs:
     name: Hello World
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-      - name: Greet
-        uses: ./github/actions/greeting
+      - uses: actions/checkout@v4
+      - uses: ./github/actions/greeting
         with:
           name: 'Lukas'

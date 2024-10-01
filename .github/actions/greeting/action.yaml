@@ -1,5 +1,5 @@
-name: 'My Custom Action'
-description: 'Hello Github Actions'
+name: 'Custom Greeter Action'
+description: 'Custom'
 
 inputs:
   name:

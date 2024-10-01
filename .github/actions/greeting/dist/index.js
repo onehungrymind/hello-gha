@@ -26825,14 +26825,15 @@ var exports = __webpack_exports__;
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 const core_1 = __nccwpck_require__(7484);
 const name = (0, core_1.getInput)('name');
-async function exampleFetch() {
+console.log(`Hello, ${name}!`);
+async function getPerson() {
     console.log('Fetching data...');
     const response = await fetch('https://swapi.dev/api/people/1/');
-    const json = await response.json();
-    console.log(json);
+    const person = await response.json();
+    (0, core_1.setOutput)('person', person);
+    console.log('person', person);
 }
-exampleFetch();
-console.log(`Hello, ${name}!`);
+getPerson();
 //# sourceMappingURL=index.js.map
 })();
 

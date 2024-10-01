@@ -54,8 +54,18 @@ jobs:
   example-job:
     name: Hello World
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
-      - uses: ./.github/actions/greeting
+      - name: Checkout
+        id: checkout
+        uses: actions/checkout@v4
+
+      - name: Greet
+        id: greet-action
+        uses: ./.github/actions/greeting
         with:
           name: 'Lukas'
+
+      - name: Print Output
+        id: output
+        run: echo "${{ steps.greet-action.outputs.person }}"

@@ -1,15 +1,19 @@
-import { getInput } from '@actions/core';
+import { getInput, setOutput } from '@actions/core';
 
 const name = getInput('name');
+console.log(`Hello, ${name}!`);
 
-async function exampleFetch() {
+async function getPerson() {
   console.log('Fetching data...');
 
   const response = await fetch('https://swapi.dev/api/people/1/');
-  const json = await response.json();
-  console.log(json);
+  const person = await response.json();
+  
+  setOutput('person', person);
+  
+  console.log('person', person);
 }
 
-exampleFetch();
+getPerson();
 
-console.log(`Hello, ${name}!`);
+

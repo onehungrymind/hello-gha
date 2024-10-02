@@ -2,10 +2,10 @@ name: "Greetings"
 description: "Greet a person"
 
 inputs:
-  name:
-    description: "The name of the person to greet"
+  person:
+    description: "The person to greet"
     required: true
-    default: "World"
+    default: "{ name: 'World' }"
 
 outputs:
   greeting:

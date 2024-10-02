@@ -76,6 +76,10 @@ jobs:
     needs: fetch-character
 
     steps:
+      - name: Checkout
+        id: checkout
+        uses: actions/checkout@v4
+
       - name: Greet
         id: greet-action
         uses: ./.github/actions/greeting

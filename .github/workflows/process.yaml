@@ -52,9 +52,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Print Output
+        id: output
+        run: echo "${{ steps.fetch-action.outputs.character }}"
+
       # Step 2: Generate some output (e.g., a file)
       - name: Generate output file
-        run: echo ${{ steps.fetch-action.outputs.character }} > output.txt
+        run: echo "${{ steps.fetch-action.outputs.character }}" > output.txt
 
       # Step 3: Upload the output as an artifact
       - name: Upload output artifact

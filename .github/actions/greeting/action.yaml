@@ -1,0 +1,16 @@
+name: "Greetings"
+description: "Greet a person"
+
+inputs:
+  person:
+    description: "The person to greet"
+    required: true
+    default: "{ name: 'World' }"
+
+outputs:
+  greeting:
+    description: "The greeting that was generated"
+
+runs:
+  using: "node20"
+  main: "dist/index.js"

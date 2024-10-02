@@ -77,4 +77,4 @@ jobs:
 
       # Step 2: Use the downloaded artifact
       - name: Display the content of the artifact
-        run: cat output.txt          
+        run: cat output.txt

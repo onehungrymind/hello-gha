@@ -1,16 +1,16 @@
-name: 'Greetings'
-description: 'Greet a person'
+name: "Greetings"
+description: "Greet a person"
 
 inputs:
   name:
-    description: 'The name of the person to greet'
+    description: "The name of the person to greet"
     required: true
-    default: 'World'
+    default: "World"
 
 outputs:
   greeting:
-    description: 'The greeting that was generated' 
+    description: "The greeting that was generated"
 
 runs:
-  using: 'node20'
-  main: 'dist/index.js'
+  using: "node20"
+  main: "dist/index.js"

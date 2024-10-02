@@ -88,4 +88,4 @@ jobs:
 
       - name: Print Output
         id: output
-        run: echo "${{ steps.greet-action.outputs.greeting }}"    
+        run: echo "${{ steps.greet-action.outputs.greeting }}"

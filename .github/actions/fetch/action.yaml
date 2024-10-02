@@ -1,10 +1,10 @@
-name: 'Fetch'
-description: 'Fetch a character from the Star Wars API'
+name: "Fetch"
+description: "Fetch a character from the Star Wars API"
 
 outputs:
   character:
-    description: 'The character that was chosen by the force'    
+    description: "The character that was chosen by the force"
 
 runs:
-  using: 'node20'
-  main: 'dist/index.js'
+  using: "node20"
+  main: "dist/index.js"

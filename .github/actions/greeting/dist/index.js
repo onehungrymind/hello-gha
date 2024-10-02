@@ -26825,7 +26825,7 @@ var exports = __webpack_exports__;
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 const core_1 = __nccwpck_require__(7484);
 const person = JSON.parse((0, core_1.getInput)('person'));
-console.log(`Hello, ${person.name}!`);
+console.log('person', person);
 (0, core_1.setOutput)('greeting', `May the force be with you, ${person.name}!`);
 //# sourceMappingURL=index.js.map
 })();

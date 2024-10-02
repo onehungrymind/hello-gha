@@ -51,21 +51,37 @@ on: [push]
 #           echo The result is $value
 
 jobs:
-  example-job:
-    name: Hello World
+  fetch-character:
+    name: Fetch Character
     runs-on: ubuntu-latest
+    outputs:
+      character: ${{ steps.fetch-action.outputs.character }}
 
     steps:
       - name: Checkout
         id: checkout
         uses: actions/checkout@v4
 
+      - name: Fetch
+        id: fetch-action
+        uses: ./.github/actions/fetch
+
+      - name: Print Output
+        id: output
+        run: echo "${{ steps.fetch-action.outputs.character }}"
+
+  greet-person:
+    name: Greet Person
+    runs-on: ubuntu-latest
+    needs: fetch-character
+
+    steps:
       - name: Greet
         id: greet-action
         uses: ./.github/actions/greeting
         with:
-          name: 'Lukas'
+          person: ${{ needs.fetch-character.outputs.character }}
 
       - name: Print Output
         id: output
-        run: echo "${{ steps.greet-action.outputs.person }}"
+        run: echo "${{ steps.greet-action.outputs.greeting }}"    

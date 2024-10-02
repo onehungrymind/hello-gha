@@ -1,5 +1,5 @@
-name: 'Custom Greeter Action'
-description: 'Custom'
+name: 'Greetings'
+description: 'Greet a person'
 
 inputs:
   name:
@@ -8,8 +8,8 @@ inputs:
     default: 'World'
 
 outputs:
-  person:
-    description: 'The person who was greeted'    
+  greeting:
+    description: 'The greeting that was generated' 
 
 runs:
   using: 'node20'

@@ -4,17 +4,22 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "compile:fetch": "tsc -p .github/actions/fetch/tsconfig.json",
+    "build:fetch": "ncc build .github/actions/fetch/dist/index.js -o .github/actions/fetch/dist",
+    "dist:fetch": "npm run compile:fetch && npm run build:fetch",    
     "compile:greeting": "tsc -p .github/actions/greeting/tsconfig.json",
     "build:greeting": "ncc build .github/actions/greeting/dist/index.js -o .github/actions/greeting/dist",
-    "dist:greeting": "npm run compile:greeting && npm run build:greeting" 
+    "dist:greeting": "npm run compile:greeting && npm run build:greeting"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/node": "^22.7.4",
     "typescript": "^5.6.2"
   },
   "dependencies": {
+    "@actions/artifact": "^2.1.9",
     "@actions/core": "^1.10.1",
     "@actions/github": "^6.0.0",
     "@vercel/ncc": "^0.38.2"

@@ -64,6 +64,7 @@ jobs:
         id: output
         run: echo "${{ steps.greet-action.outputs.greeting }}"
 
+  # This is a bonus section to show how to write and then read artifacts
   build-artifact:
     name: Build Artifact
     runs-on: ubuntu-latest

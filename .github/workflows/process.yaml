@@ -38,7 +38,7 @@ jobs:
         id: fetch-action
         uses: ./.github/actions/fetch
         with:
-          person: ${{ needs.fetch-random.outputs.character_id }}
+          character_id: ${{ needs.fetch-random.outputs.character_id }}
 
       - name: Print Output
         id: output

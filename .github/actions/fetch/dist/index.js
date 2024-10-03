@@ -26825,6 +26825,7 @@ var exports = __webpack_exports__;
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 const core_1 = __nccwpck_require__(7484);
 const id = (0, core_1.getInput)('character_id');
+console.log('id', id);
 async function fetchCharacter() {
     console.log('Fetching data...');
     const response = await fetch(`https://swapi.dev/api/people/${id}/`);

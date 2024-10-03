@@ -2,6 +2,8 @@ import { getInput, setOutput } from '@actions/core';
 
 const id = getInput('character_id');
 
+console.log('id', id);
+
 async function fetchCharacter() {
   console.log('Fetching data...');
 

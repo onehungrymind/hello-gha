@@ -1,5 +1,5 @@
 name: "Fetch"
-description: "Fetch a character from the Star Wars API"
+description: "Fetch a single character from the Star Wars API"
 
 inputs:
   character_id:

@@ -26824,15 +26824,16 @@ var exports = __webpack_exports__;
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 const core_1 = __nccwpck_require__(7484);
-const id = (0, core_1.getInput)('character_id');
-async function fetchCharacter() {
+const getRandomInt = (max) => Math.floor(Math.random() * max) + 1;
+async function fetchCharacterId() {
     console.log('Fetching data...');
-    const response = await fetch(`https://swapi.dev/api/people/${id}/`);
-    const character = await response.json();
-    (0, core_1.setOutput)('character', character);
-    console.log('character', character);
+    const response = await fetch('https://swapi.dev/api/people/');
+    const characters = await response.json();
+    const character_id = getRandomInt(characters.count);
+    (0, core_1.setOutput)('character_id', character_id);
+    console.log('character_id', character_id);
 }
-fetchCharacter();
+fetchCharacterId();
 //# sourceMappingURL=index.js.map
 })();
 

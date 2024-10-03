@@ -1,0 +1,10 @@
+name: "Random"
+description: "Fetch a random character ID from the Star Wars API"
+
+outputs:
+  character_id:
+    description: "The character ID that was chosen by the force"
+
+runs:
+  using: "node20"
+  main: "dist/index.js"

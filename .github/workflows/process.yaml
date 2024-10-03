@@ -3,9 +3,29 @@ run-name: ${{ github.actor }} is using the force
 on: [push]
 
 jobs:
+  fetch-random:
+    name: Fetch Random Character ID
+    runs-on: ubuntu-latest
+    outputs:
+      character: ${{ steps.random-action.outputs.character_id }}    
+
+    steps:
+      - name: Checkout
+        id: checkout
+        uses: actions/checkout@v4
+
+      - name: Random
+        id: random-action
+        uses: ./.github/actions/random
+
+      - name: Print Output
+        id: output
+        run: echo "${{ steps.random-action.outputs.character_id }}"
+
   fetch-character:
     name: Fetch Character
     runs-on: ubuntu-latest
+    needs: fetch-random
     outputs:
       character: ${{ steps.fetch-action.outputs.character }}
 
@@ -22,8 +42,8 @@ jobs:
         id: output
         run: echo "${{ steps.fetch-action.outputs.character }}"
 
-  greet-person:
-    name: Greet Person
+  greet-character:
+    name: Greet Character
     runs-on: ubuntu-latest
     needs: fetch-character
 

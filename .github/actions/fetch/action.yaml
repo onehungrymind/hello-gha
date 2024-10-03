@@ -1,6 +1,10 @@
 name: "Fetch"
 description: "Fetch a character from the Star Wars API"
 
+inputs:
+  character_id:
+    description: "The character ID that was chosen by the force"
+
 outputs:
   character:
     description: "The character that was chosen by the force"

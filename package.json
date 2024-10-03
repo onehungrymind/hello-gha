@@ -4,12 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "compile:random": "tsc -p .github/actions/random/tsconfig.json",
+    "build:random": "ncc build .github/actions/random/dist/index.js -o .github/actions/random/dist",
+    "dist:random": "npm run compile:random && npm run build:random",       
     "compile:fetch": "tsc -p .github/actions/fetch/tsconfig.json",
     "build:fetch": "ncc build .github/actions/fetch/dist/index.js -o .github/actions/fetch/dist",
     "dist:fetch": "npm run compile:fetch && npm run build:fetch",    
     "compile:greeting": "tsc -p .github/actions/greeting/tsconfig.json",
     "build:greeting": "ncc build .github/actions/greeting/dist/index.js -o .github/actions/greeting/dist",
-    "dist:greeting": "npm run compile:greeting && npm run build:greeting"
+    "dist:greeting": "npm run compile:greeting && npm run build:greeting",
+    "dist:all": "npm run dist:random && npm run dist:fetch && npm run dist:greeting"
   },
   "keywords": [],
   "author": "",

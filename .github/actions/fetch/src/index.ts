@@ -1,18 +1,16 @@
 import { getInput, setOutput } from '@actions/core';
+import { fetchCharacter } from '../../common/swapi.js';
 
 const id = getInput('character_id');
 
 console.log('id', id);
 
-async function fetchCharacter() {
-  console.log('Fetching data...');
-
-  const response = await fetch(`https://swapi.dev/api/people/${id}/`);
-  const character = await response.json();
+async function fetch(id: string) {
+  const character = await fetchCharacter(id);
   
   setOutput('character', character);
   
   console.log('character', character);
 }
 
-fetchCharacter();
+fetch(id);

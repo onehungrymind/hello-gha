@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "compile:random": "tsc -p .github/actions/random/tsconfig.json",
     "build:random": "ncc build .github/actions/random/dist/index.js -o .github/actions/random/dist",

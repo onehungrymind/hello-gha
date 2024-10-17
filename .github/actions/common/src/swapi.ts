@@ -1,4 +1,3 @@
-
 export async function fetchCharacters() {
   console.log('Fetching characters...');
   const response = await fetch('https://swapi.dev/api/people/');

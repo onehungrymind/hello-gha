@@ -1,10 +1,3 @@
-/******/ (() => { // webpackBootstrap
-/******/ 	/* webpack/runtime/compat */
-/******/ 	
-/******/ 	if (typeof __nccwpck_require__ !== 'undefined') __nccwpck_require__.ab = __dirname + "/";
-/******/ 	
-/************************************************************************/
-var __webpack_exports__ = {};
 define("common/src/swapi", ["require", "exports"], function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
@@ -40,19 +33,15 @@ define("common/index", ["require", "exports", "common/src/swapi", "common/src/ut
     Object.defineProperty(exports, "fetchCharacters", { enumerable: true, get: function () { return swapi_1.fetchCharacters; } });
     Object.defineProperty(exports, "getRandomInt", { enumerable: true, get: function () { return utils_1.getRandomInt; } });
 });
-define("fetch/src/fetch", ["require", "exports", "@actions/core", "common/index"], function (require, exports, core_1, common_1) {
+define("random/src/random", ["require", "exports", "@actions/core", "common/index"], function (require, exports, core_1, common_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    const id = (0, core_1.getInput)('character_id');
-    console.log('id', id);
-    async function fetch(id) {
-        const character = await (0, common_1.fetchCharacter)(id);
-        (0, core_1.setOutput)('character', character);
-        console.log('character', character);
+    async function random() {
+        const characters = await (0, common_1.fetchCharacters)();
+        const character_id = (0, common_1.getRandomInt)(characters.count);
+        (0, core_1.setOutput)('character_id', character_id);
+        console.log('character_id', character_id);
     }
-    fetch(id);
+    random();
 });
-//# sourceMappingURL=fetch.js.map
-module.exports = __webpack_exports__;
-/******/ })()
-;
+//# sourceMappingURL=random.js.map

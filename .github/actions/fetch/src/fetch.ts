@@ -1,10 +1,5 @@
 import { getInput, setOutput } from '@actions/core';
-import path from 'path';
-import { fileURLToPath } from 'url';
-import { fetchCharacter } from '../../common/swapi.js';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+import { fetchCharacter } from '@proto/common';
 
 const id = getInput('character_id');
 

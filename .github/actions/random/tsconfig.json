@@ -1,8 +1,15 @@
 {
   "extends": "../../../tsconfig.json",
   "compilerOptions": {
+    "outFile": "./dist/random.js",
+    "module": "amd",
+    "target": "es2020",
     "outDir": "./dist",
-    "rootDirs": ["./src","../../common"],
+    "rootDirs": ["./src"],
     "baseUrl": "./",
-  }
+    "paths": {
+      "@proto/common": ["../common/index.ts"]
+    }
+  },
+  "include": ["**/*.ts"]
 }

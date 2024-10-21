@@ -26826,7 +26826,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.fetchCharacter = fetchCharacter;
 const core_1 = __nccwpck_require__(7484);
 async function fetchCharacter(id) {
-    console.log('Fetching character...');
+    console.log('Fetching character...', id);
     const response = await fetch(`https://swapi.dev/api/people/${id}/`);
     const character = await response.json();
     console.log('character', character);
@@ -26834,12 +26834,12 @@ async function fetchCharacter(id) {
 }
 const id = (0, core_1.getInput)('character_id');
 console.log('id', id);
-async function fetch(id) {
+async function _fetch(id) {
     const character = await fetchCharacter(id);
     (0, core_1.setOutput)('character', character);
     console.log('character', character);
 }
-fetch(id);
+_fetch(id);
 //# sourceMappingURL=fetch.js.map
 })();
 

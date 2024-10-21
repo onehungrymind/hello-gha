@@ -1,15 +1,8 @@
 {
   "extends": "../../../tsconfig.json",
   "compilerOptions": {
-    "outFile": "./dist/fetch.js",
-    "module": "amd",
-    "target": "es2020",
     "outDir": "./dist",
     "rootDirs": ["./src"],
     "baseUrl": "./",
-    "paths": {
-      "@proto/common": ["../common/index.ts"]
-    }
-  },
-  "include": ["**/*.ts"]
+  }
 }

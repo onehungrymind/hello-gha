@@ -1,5 +1,14 @@
 import { setOutput } from '@actions/core';
-import { fetchCharacters, getRandomInt } from '@proto/common';
+
+export async function fetchCharacters() {
+  console.log('Fetching characters...');
+  const response = await fetch('https://swapi.dev/api/people/');
+  const characters = await response.json();
+  console.log('characters', characters);
+  return characters;
+}
+
+export const getRandomInt = (max: number): number => Math.floor(Math.random() * max) + 1;
 
 async function random() {
   const characters = await fetchCharacters();
